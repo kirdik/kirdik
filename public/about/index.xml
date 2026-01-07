@@ -1,46 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Записки архивариуса</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Записки архивариуса</description>
+    <title>Abouts on Записки архивариуса</title>
+    <link>http://localhost:1313/about/</link>
+    <description>Recent content in Abouts on Записки архивариуса</description>
     <generator>Hugo -- 0.154.2</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 08 Jan 2026 00:59:32 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Список фольклорных архивов</title>
-      <link>http://localhost:1313/archives/archives-list/</link>
-      <pubDate>Thu, 08 Jan 2026 00:59:32 +0300</pubDate>
-      <guid>http://localhost:1313/archives/archives-list/</guid>
-      <description>Список известных фольклорных архивов этномузыкологического и филологического направления доступных в сети.</description>
-    </item>
-    <item>
-      <title>E.В.Гиппиус и проблема каталогизации народных мелодий</title>
-      <link>http://localhost:1313/archives/hippius-catalogisation/</link>
-      <pubDate>Thu, 08 Jan 2026 00:33:43 +0300</pubDate>
-      <guid>http://localhost:1313/archives/hippius-catalogisation/</guid>
-      <description>Автор рассматривает отношение известного этномузыковеда Евгения Владимировича Гиппиуса к задаче каталогизации народных мелодий на протяжении его научной карьеры. Показано, что ещё в 1920-е гг. Гиппиус сталкивался с картотеками мелодий, но научно-теоретический интерес его всегда был направлен скорее на интерпретацию музыкальных явлений, чем на систематизацию фактов. Лишь в 1970–80-е гг., возглавляя Фольклорную комиссию, он столкнулся с необходимостью упорядочения больших фондов нотаций и изложил свои взгляды в статье «Общетеоретический взгляд на проблему каталогизации народных мелодий». Его подход подчёркивает сложность создания работающей системы каталогизации и предлагает глубокие, но теоретически насыщенные принципы анализа мелодий, которые трудно соединить с практической каталогизацией.</description>
-    </item>
-    <item>
-      <title>Кодеки сжатия аудио без потерь (lossless)</title>
-      <link>http://localhost:1313/it/codecs/</link>
-      <pubDate>Thu, 08 Jan 2026 00:15:57 +0300</pubDate>
-      <guid>http://localhost:1313/it/codecs/</guid>
-      <description>Небольшой ликбез по аудио кодекам. Как работают кодеки которые не вносят изменения в звук, но уменьшают размер файла.</description>
-    </item>
-    <item>
-      <title>Карта экспедиций Александра Михайловича Листопадова</title>
-      <link>http://localhost:1313/archives/listopadov-map/</link>
-      <pubDate>Wed, 07 Jan 2026 22:40:27 +0300</pubDate>
-      <guid>http://localhost:1313/archives/listopadov-map/</guid>
-      <description>Статья посвящена опыту создания интерактивной онлайн-карты экспедиций А. М. Листопадова на основании данных, доступных в пятитомнике «Песни донских казаков». Описан процесс разработки, проблемы, возникшие в ходе работы, и способы их решения.</description>
-    </item>
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://localhost:1313/about/_index.md/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://localhost:1313/about/_index.md/</guid>
       <description>&lt;h2 id=&#34;кирилл-валентинович-чеботарёв&#34;&gt;Кирилл Валентинович Чеботарёв&lt;/h2&gt;
 &lt;p&gt;Ведущий специалист по исследованию и сохранению архивных фондов,
 руководитель сектора фольклорно-этнографических фондов Общероссийской общественной организации «Российский фольклорный союз»&lt;/p&gt;
