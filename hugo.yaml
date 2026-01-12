@@ -54,13 +54,13 @@ menu:
       url: "/folklore/"
       weight: 10 
     - identifier: "it"
-      name: "Технология"
+      name: "Техничка"
       url: "/it/"
       weight: 20
-    - identifier: "whater"
-      name: "Вода"
-      url: "/whater/"
-      weight: 30
+    #- identifier: "whater"
+    #  name: "Вода"
+    #  url: "/whater/"
+    #  weight: 30
     - identifier: "tags"
       name: "Теги"
       url: "/tags/"

@@ -7,7 +7,7 @@ pinned: true
 
 author: "Кирилл В. Чеботарёв"
 tags: ["кодеки", "звук", "mp3", "flac", "wav"]
-categories: ["Звук"]
+categories: ["Звук", "Ликбез"]
 
 description: "Небольшой ликбез по аудио кодекам. Как работают кодеки которые не вносят изменения в звук, но уменьшают размер файла."
 canonicalURL: "https://arch.folkcentr.ru/all/kodeki-szhatiya-audio-bez-poter-lossless/"
