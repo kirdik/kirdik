@@ -1,11 +1,9 @@
 ---
 title: "Карта экспедиций Александра Михайловича Листопадова"
 date: 2026-01-07T22:40:27+03:00
-# weight: 1
-# aliases: ["/first"]
 tags: ["Листопадов А.М.", "казаки", "картографирование"]
+categories: ["Мои публикации"]
 author: "Кирилл В. Чеботарёв"
-# author: ["Me", "You"] 
 showToc: true
 TocOpen: false
 draft: false
@@ -24,7 +22,7 @@ ShowWordCount: true
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "" 
+    image: "Listopadov-map.webp" 
     alt: "" 
     caption: "" 
     relative: false 

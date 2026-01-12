@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Листопадов А.М. on Записки архивариуса</title>
     <link>http://localhost:1313/tags/%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%B0%D0%B4%D0%BE%D0%B2-%D0%B0.%D0%BC./</link>
     <description>Recent content in Листопадов А.М. on Записки архивариуса</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.154.2</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 07 Jan 2026 22:40:27 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%B0%D0%B4%D0%BE%D0%B2-%D0%B0.%D0%BC./index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>http://localhost:1313/folklore/listopadov-map/</link>
       <pubDate>Wed, 07 Jan 2026 22:40:27 +0300</pubDate>
       <guid>http://localhost:1313/folklore/listopadov-map/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/folklore/listopadov-map/Listopadov-journal-1.webp&#34;&#xA;    alt=&#34;Современное состояние фольклорных традиций казачества Юга России и перспективы их изучения: сборник научных статей и методических материалов / Ред.-сост. Е. А. Дорохова, Д. В. Морозов. — М.: Государственный Российский Дом народного творчества имени В. Д. Поленова, 2023. — 192 с. : ил., нот.&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;p&gt;Современное состояние фольклорных традиций казачества Юга России и перспективы их изучения: сборник научных статей и методических материалов / Ред.-сост. Е. А. Дорохова, Д. В. Морозов. — М.: Государственный Российский Дом народного творчества имени В. Д. Поленова, 2023. — 192 с. : ил., нот.&lt;/p&gt;</description>
+      <description>Статья посвящена опыту создания интерактивной онлайн-карты экспедиций А. М. Листопадова на основании данных, доступных в пятитомнике «Песни донских казаков». Описан процесс разработки, проблемы, возникшие в ходе работы, и способы их решения.</description>
     </item>
   </channel>
 </rss>

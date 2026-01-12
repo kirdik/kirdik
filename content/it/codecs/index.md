@@ -30,11 +30,11 @@ ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 
 cover:
-  image: "codecs.webp"
+  image: "cover.webp"
   alt: ""
   caption: ""
   relative: true
-  hidden: true
+  hidden: false
 ---
 
 <!-- Текст статьи начинается здесь.

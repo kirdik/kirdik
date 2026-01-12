@@ -1,2 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru" dir="auto" data-theme="auto">
 
-<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Кодеки сжатия аудио без потерь (lossless) | Записки архивариуса</title>
+<meta name="keywords" content="кодеки, звук, mp3, flac, wav">
+<meta name="description" content="Небольшой ликбез по аудио кодекам. Как работают кодеки которые не вносят изменения в звук, но уменьшают размер файла.">
+<meta name="author" content="Кирилл В. Чеботарёв">
+<link rel="canonical" href="https://arch.folkcentr.ru/all/kodeki-szhatiya-audio-bez-poter-lossless/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.35ee338ed440993093c41bde8753d123c20f1927528da246a7f57a0b3c02f7d5.css" integrity="sha256-Ne4zjtRAmTCTxBveh1PRI8IPGSdSjaJGp/V6CzwC99U=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="ru" href="http://localhost:1313/it/codecs/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Записки архивариуса (Alt + H)">Записки архивариуса</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/folklore/" title="Фольклор">
+                    <span>Фольклор</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/it/" title="Технология">
+                    <span>Технология</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/whater/" title="Вода">
+                    <span>Вода</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Теги">
+                    <span>Теги</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Поиск (Alt &#43; /)" accesskey=/>
+                    <span>Поиск</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Всё">
+                    <span>Всё</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="@Я">
+                    <span>@Я</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Главная</a>&nbsp;»&nbsp;<a href="http://localhost:1313/it/">Технология</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Кодеки сжатия аудио без потерь (lossless)
+    </h1>
+    <div class="post-meta"><span title='2026-01-08 00:15:57 +0300 MSK'>8 января 2026 г.</span>&nbsp;·&nbsp;<span>4 минуты</span>&nbsp;·&nbsp;<span>656 слов</span>&nbsp;·&nbsp;<span>Кирилл В. Чеботарёв</span>
+
+</div>
+  </header> 
+<figure class="entry-cover">
+            <img loading="eager" src="http://localhost:1313/it/codecs/cover.webp" alt="">
+        
+</figure>
+
+  <div class="post-content"><!-- Текст статьи начинается здесь.
+Картинки можно просто перетаскивать в эту папку. -->
+<p>Небольшой ликбез по аудио кодекам. Как работают кодеки которые не вносят изменения в звук, но уменьшают размер файла.</p>
+<p>Информации о том, что такое кодек и как он влияет на качество звучания в интернете очень много. Статья мало чем будет отличаться от сотни других таких же, но было бы неприлично отправлять читателя искать информацию в интернет самостоятельно.<br>
+Кодеки для работы со звуком делят на две категории.</p>
+<p><strong>Lossless</strong> — без потерь и <strong>Lossy</strong> — с потерями.<br>
+Lossless кодеки, это способ сжать звуковой файл как если бы его сжимали при помощи ZIP или RAR. Но ZIP и RAR сжатие не оптимизировано для работы со звуком, эти форматы в первую очередь были разработаны для сжатия текстовых файлов, создания многотомных архивов для долгосрочного хранения. Алгоритмы сжатия таких архиваторов как ZIP, RAR, 7z, GZIP, BZIP при архивировании уменьшают звуковой файл не более чем на 10% и к тому же что бы послушать звук ими сжатый, его придется предварительно распаковать.</p>
+<p>Lossless кодеки призваны решить проблему эффективного сжатия звуковых данных и проигрывания сжатого файла без предварительной распаковки.<br>
+Есть распространенное заблуждение, что lossless кодеки ухудшают звук. Объясню, почему этого не может быть.<br>
+Как бы это странно не звучало, но lossless кодек не работает со звуком. Если lossy кодеки для сокращения объема вырезают частоты не слышимые ухом и вообще производят обширные вмешательство в структуру звука, то lossless кодек вообще не делает ничего с исходными данными звука. Сжатию подвергается последовательность байтов цифрового файла. При обратной конвертации из lossless вы получите на выходе абсолютно точную копию звуковых данных. Напомню — цифровой звуковой файл по своей сути является записью точек координат графика по осям x, y и в теории можно эти данные сохранить в текстовый файл. Если такой файл сжать при помощи zip и представить, что его сможет воспроизвести какая-то программа, то в общих чертах это и будет принцип работы lossless кодека. Конечно, все это довольно упрощенная модель по сравнению с теми алгоритмами, которые применяются в более чем одиннадцати видах популярных lossless кодеков.</p>
+<p>Есть нюанс, который может ухудшить звучание при кодировании в lossless.<br>
+В том случае, когда при сжатии меняется исходная частота дискретизации в меньшую сторону, то качество снижается, поскольку теряется избыточность, которая бывает необходима в первую очередь для обработки файла. Например у вас есть запись в формате wav с частотой дискретизации 96гГц и вы ее решили сжать кодеком flac с понижением частоты дискретизации до 44гГц, что в итоге существенно уменьшит размер файла. В этом случае качество снизится, поскольку, что вы задали понижающие параметры и конвертируя обратно из flac в wav получите файл с ухудшенными параметрами, но это говорит не о том, что flac ухудшает качество, а о том, что нужно перед конвертацией точно знать что и для чего вы делаете. Какие параметры вы задали и на что они влияют, поэтому если перед вами стоит задача сжать файл, но не потерять качество, то такие параметры как частота дискретизации и количество бит на сэмпл должны быть указаны конвертеру такие же как у исходного файла. Если говорить о фольклорно — этнографических записях, то здесь возможны варианты, поскольку частотный диапазон человеческого голоса очень небольшой и современные стандарты в большинстве случаев перекрывают минимальные требования для него более чем в три раза.</p>
+<p><img loading="lazy" src="/it/codecs/codecs.webp">
+FFMPEG по умолчанию кодирует wav файлы в flac с исходной частотой дискретизации</p>
+<p><strong>Команда для кодирования из wav в flac</strong></p>
+<p><code>ffmpeg -i file.wav file.flac</code></p>
+<p><code>ffmpeg -i in.wav -af aformat=s32:176000 out.flac</code></p>
+<p><code>ffmpeg -i in.wav -af aformat=s16:44100 out.flac</code></p>
+<p>Существует более одиннадцати lossless кодеков с различными алгоритмами сжатия. Наиболее популярные:</p>
+<ul>
+<li>Lossless Audio (LA)</li>
+<li>OptimFROG</li>
+<li>Monkey’s Audio</li>
+<li>TAK</li>
+<li>WavPack</li>
+<li>FLACCL</li>
+<li>True Audio (TTA)</li>
+<li>Flake</li>
+<li>FLAC</li>
+<li>Apple Lossless (ALAC)</li>
+<li>WMA Lossless</li>
+</ul>
+<p>Разобраться в нюансах каждого из представленных задача не тривиальная, вот например <a href="https://audiophilesoft.ru/publ/my/lossless_comparison/11-1-0-68">статья где все эти кодеки сравниваются между собой</a>.</p>
+<p>От себя могу лишь добавить, что для кодирования
+нашего архива был выбран кодек <strong>FLAC</strong>.<br>
+Наши аргументы в его пользу:<br>
+<strong>FLAC</strong> один из наиболее популярных и распространенных.<br>
+Открытый исходный код, — это обуславливает то, что он поддерживается большим количеством производителей аудио аппаратуры.<br>
+Хорошие показатели по сжатию, не самые лучшие, но в купе с остальными преимуществами делают его наиболее привлекательным.</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D0%B8/">Кодеки</a></li>
+      <li><a href="http://localhost:1313/tags/%D0%B7%D0%B2%D1%83%D0%BA/">Звук</a></li>
+      <li><a href="http://localhost:1313/tags/mp3/">Mp3</a></li>
+      <li><a href="http://localhost:1313/tags/flac/">Flac</a></li>
+      <li><a href="http://localhost:1313/tags/wav/">Wav</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/folklore/hippius-catalogisation/">
+    <span class="title">« Предыдущая</span>
+    <br>
+    <span>E.В.Гиппиус и проблема каталогизации народных мелодий</span>
+  </a>
+  <a class="next" href="http://localhost:1313/folklore/listopadov-map/">
+    <span class="title">Следующая »</span>
+    <br>
+    <span>Карта экспедиций Александра Михайловича Листопадова</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Записки архивариуса</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><div id="lightbox">
+  <img src="" alt="">
+</div>
+<script src="/js/gallery.js"></script>
+
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
