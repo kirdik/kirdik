@@ -95,7 +95,8 @@ for NAME in * ; do
 done
 ```
 
-Обновлённая версия переписанная на Python, подходит и для Windows, но нуждается в [установке Python на компьютер](https://www.python.org/downloads/).
+## Обновлённая версия 
+Скрипт переписан на Python, подходит и для Windows, но нуждается в [установке Python на компьютер](https://www.python.org/downloads/).
 
 Как пользоваться:
 1)  Копируем код в текстовый фал и называем его translit.py
